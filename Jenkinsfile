@@ -15,9 +15,9 @@ pipeline {
 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
 
-                docker build . -f dockerfile mahmom/sprints_jenkins_course:latest
+                docker build . -f dockerfile radwa98/sprints_jenkins_course:latest
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker push mahmom/sprints_jenkins_course:latest
+                docker push radwa98/sprints_jenkins_course:latest
                 """
 
                 // To run Maven on a Windows agent, use
